@@ -49,7 +49,7 @@ const Scan = () => {
               style={{height: 36, width: 36}}
             />
           </TouchableOpacity>
-          <Text style={styles.textTitle}>Scan QR Code</Text>
+          <Text style={styles.textTitle}>Scan QR Code or Barcode</Text>
         </View>
 
         {!scan && !scanResult && (
@@ -59,7 +59,7 @@ const Scan = () => {
               style={{height: 36, width: 36}}
             />
             <Text numberOfLines={8} style={styles.descText}>
-              Please move your camera {'\n'} over the QR Code
+              Please move your camera {'\n'} over the QR Code or Barcode
             </Text>
             <Image
               source={require('./assets/qr-code.png')}
@@ -73,7 +73,7 @@ const Scan = () => {
                   style={{height: 36, width: 36}}
                 />
                 <Text style={{...styles.buttonTextStyle, color: '#2196f3'}}>
-                  Scan QR Code
+                  Scan QR Code or Barcode
                 </Text>
               </View>
             </TouchableOpacity>
@@ -110,7 +110,7 @@ const Scan = () => {
             onRead={onSuccess}
             topContent={
               <Text style={styles.centerText}>
-                Please move your camera {'\n'} over the QR Code
+                Please move your camera {'\n'} over the QR Code or Barcode
               </Text>
             }
             bottomContent={

@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React,{ useState} from 'react'
 import DropDownPicker from 'react-native-dropdown-picker'
-import { color } from 'react-native-elements/dist/helpers';
+
 
 const HomeScreen = () => {
   const [isOpen,setIsOpen] = useState(false);
