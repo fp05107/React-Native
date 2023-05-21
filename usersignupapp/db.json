@@ -1,0 +1,16 @@
+{
+  "users":[
+    {
+      "name": "Subham",
+      "age": 20,
+      "country": "India",
+      "gender": "Male"
+    },
+    {
+      "name": "Subhankar",
+      "age": 18,
+      "country": "India",
+      "gender": "Male"
+    }
+  ]
+}
