@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor:'red',
     borderRadius: 50
   },
+  
 });
 
 export default styles;
