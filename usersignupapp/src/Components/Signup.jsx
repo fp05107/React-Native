@@ -42,7 +42,12 @@ const Signup = () => {
   };
 
   //Table
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([{
+    name: 'Rutu',
+    age: 20,
+    country: 'India',
+    gender: 'FeMale',
+  }]);
 
   async function postUsers() {
     await postData({
@@ -55,8 +60,8 @@ const Signup = () => {
   const [form, setForm] = useState({});
 
   function fetchUsers() {
-    // console.log("hey");
-    // getData().then(res => setUsers(res));
+    console.log("===================");
+    getData().then(res => setUsers(res));
     getData().then(res => console.log(res));
   }
 

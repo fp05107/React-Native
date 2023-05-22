@@ -4,11 +4,12 @@ import axios from 'axios';
 // json-server --host 0.0.0.0 db.json
 // http://10.0.2.2:3000/users
 
+// const URL = `http://10.0.2.2:3000`;
 const URL = `http://192.168.43.8:3000`;
 
 export const getData = async () => {
   try {
-    const res = await fetch(`http://10.0.2.2:3000/users`);
+    const res = await fetch(`${URL}/users`);
     const data = res.json();
     return data;
   } catch (error) {}
