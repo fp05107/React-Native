@@ -4,6 +4,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 import firestore from '@react-native-firebase/firestore';
@@ -31,10 +32,33 @@ const Signup = () => {
       })
       .then(res => {
         console.log('user created');
+        navigation.navigate('Login');
       })
       .catch(error => {
         console.log(error);
       });
+  };
+  const validate = () => {
+    let isValid = false;
+    if (name == '') {
+      isValid = false;
+    }
+    if (email == '') {
+      isValid = false;
+    }
+    if (mobile == '') {
+      isValid = false;
+    }
+    if (password == '') {
+      isValid = false;
+    }
+    if (confirmPassword == '') {
+      isValid = false;
+    }
+    if (confirmPassword !== password) {
+      isValid = false;
+    }
+    return isValid;
   };
   return (
     <View style={styles.container}>
@@ -70,10 +94,24 @@ const Signup = () => {
         value={confirmPassword}
         onChangeText={txt => setConfirmPassword(txt)}
       />
-      <TouchableOpacity style={styles.btn} onPress={() => registerUser()}>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => {
+          if (validate()) {
+            registerUser();
+          } else {
+            Alert.alert('please enter correct details');
+          }
+        }}>
         <Text style={styles.btnText}>Sign Up</Text>
       </TouchableOpacity>
-      <Text style={styles.orLogin}>or Login</Text>
+      <Text
+        onPress={() => {
+          navigation.goBack();
+        }}
+        style={styles.orLogin}>
+        or Login
+      </Text>
     </View>
   );
 };
